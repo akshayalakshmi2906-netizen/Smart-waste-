@@ -1,0 +1,174 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;   /* ✅ enable vertical scrolling */
+  overflow-x: hidden; /* no horizontal scroll */
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth; /* smooth mouse scrolling */
+}
+
+/* ✅ Hide scrollbar but keep scroll functional */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+html {
+  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;  /* IE/Edge */
+}
+
+/* Wrapper with eco background */
+.eco-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  background: url("./sphere-with-trees.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+
+  /* ✅ Allow vertical scrolling but remove scrollbar space */
+  overflow-y: overlay;  /* overlay prevents scrollbar from taking space */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+  scrollbar-width: none !important;    /* Firefox */
+  -ms-overflow-style: none !important; /* IE/Edge */
+}
+
+/* ✅ Hide scrollbar completely in WebKit (Chrome, Safari, Opera) */
+.eco-wrapper::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+/* Glassy container */
+.eco-container {
+  max-width: 1000px;
+  width: 100%;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  animation: slideUp 1s ease;
+}
+
+.eco-container h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1b5e20;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.eco-container h2::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2e7d32, #66bb6a);
+  margin: 8px auto 0;
+  border-radius: 3px;
+  animation: underlineExpand 1.5s ease forwards;
+}
+
+.eco-subheading {
+  font-size: 1.2rem;
+  color: #f1f1f1;
+  margin-bottom: 30px;
+  font-style: italic;
+  animation: fadeIn 1.2s ease;
+}
+
+/* Grid */
+.eco-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* Eco cards */
+.eco-card {
+  border-radius: 15px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  color: white;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: cardFadeUp 0.9s ease forwards;
+}
+
+.eco-card:nth-child(1) { animation-delay: 0.2s; background: linear-gradient(135deg, #2e7d32, #66bb6a); }
+.eco-card:nth-child(2) { animation-delay: 0.4s; background: linear-gradient(135deg, #1565c0, #42a5f5); }
+.eco-card:nth-child(3) { animation-delay: 0.6s; background: linear-gradient(135deg, #8d6e63, #d7ccc8); }
+.eco-card:nth-child(4) { animation-delay: 0.8s; background: linear-gradient(135deg, #6a1b9a, #ab47bc); }
+.eco-card:nth-child(5) { animation-delay: 1s; background: linear-gradient(135deg, #0288d1, #4dd0e1); }
+.eco-card:nth-child(6) { animation-delay: 1.2s; background: linear-gradient(135deg, #ef6c00, #ffb74d); }
+
+.eco-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  animation: bounce 0.5s ease;
+}
+
+.eco-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #004d00;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.eco-card p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+/* ✅ Eco tip always visible */
+.eco-tip {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 6px 10px;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes cardFadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes underlineExpand {
+  from { width: 0; }
+  to { width: 120px; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(-10px) scale(1.05); }
+  50% { transform: translateY(-14px) scale(1.07); }
+}

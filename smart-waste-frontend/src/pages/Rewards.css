@@ -1,0 +1,110 @@
+/* Background only for Rewards page */
+.rewards-wrapper {
+  min-height: 100vh;
+  background: url("./winner.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+/* Rewards container (content box) */
+.rewards-container {
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(230, 245, 233, 0.9); /* semi-transparent for readability */
+  border: 1px solid #b2dfdb;
+  border-radius: 10px;
+  font-family: "Trebuchet MS", sans-serif;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.rewards-container h2 {
+  text-align: center;
+  color: #2e7d32;
+}
+
+.reward-item {
+  margin: 10px 0;
+  padding: 10px;
+  background: #f1f8f6;
+  border-radius: 6px;
+  border: 1px solid #80cbc4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reward-item button {
+  padding: 6px 12px;
+  background: #4db6ac;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reward-item button:hover {
+  background: #00897b;
+}
+
+/* Idea box */
+.idea-box {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.idea-box textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #80cbc4;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.idea-box button {
+  align-self: flex-end;
+  padding: 8px 16px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.idea-box button:hover {
+  background: #2e7d32;
+}
+
+/* Ideas list */
+.idea-list {
+  list-style: none;
+  padding: 0;
+}
+
+.idea-item {
+  background: #f9fff9;
+  border: 1px solid #c8e6c9;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.idea-points {
+  background: #4caf50;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-left: 10px;
+}

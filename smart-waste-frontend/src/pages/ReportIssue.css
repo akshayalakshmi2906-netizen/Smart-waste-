@@ -1,0 +1,141 @@
+/* Full background */
+.report-background {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+  position: relative;
+}
+
+.report-background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* dark overlay for text readability */
+  z-index: 0;
+}
+
+/* Glassmorphism form container */
+.report-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.report-container h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 1.9rem;
+  font-weight: 700;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Form styling */
+.report-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.report-form label {
+  margin: 12px 0 6px;
+  font-weight: 500;
+  color: #e8f5e9;
+}
+
+.report-form input,
+.report-form textarea {
+  padding: 12px 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.report-form input::placeholder,
+.report-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.report-form input:focus,
+.report-form textarea:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 12px rgba(76, 175, 80, 0.6);
+}
+
+.report-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Button */
+.report-form button {
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.report-form button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #43a047, #1b5e20);
+}
+
+/* Response messages */
+.response-msg {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* Small screen */
+@media (max-width: 600px) {
+  .report-container {
+    padding: 20px;
+    margin: 30px 15px;
+  }
+
+  .report-container h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,89 @@
+.cover-container {
+  display: flex;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  background: url("./park.jpg") no-repeat center center;
+  background-size: cover; /* full image background */
+  position: relative;
+}
+
+/* Left curved overlay (covers half page) */
+.cover-left {
+  flex: 1;
+  background: rgba(0, 90, 0, 0.9); /* dark green */
+  clip-path: ellipse(100% 100% at 0% 50%); /* smooth curve */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  text-align: center;
+  z-index: 2;
+  height: 100%;
+}
+
+/* Right side (just background image visible) */
+.cover-right {
+  flex: 1;
+  height: 100%;
+}
+
+/* Title */
+.cover-title {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.4;
+  color: #f9f9f9;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cover-title span {
+  font-weight: 700;
+  font-size: 1.6rem;
+  display: block;
+  margin-top: 15px;
+  color: #f9f9f9;
+}
+
+/* Quotes */
+.cover-quote {
+  font-size: 1.3rem;
+  margin: 25px 0;
+  line-height: 1.6;
+  font-weight: 900;
+  color: yellow;
+  animation: fadeSlide 3s infinite alternate ease-in-out;
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0.3;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Transparent Button with White Border */
+.cover-button {
+  background: transparent;
+  color: #fff;
+  padding: 6px 18px; /* small */
+  border: 2px solid #fff;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 20px;
+  width: auto;
+}
+
+.cover-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}

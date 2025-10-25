@@ -1,0 +1,113 @@
+/* Full page background */
+.login-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../assets/close-up-hand-holding-plastic-bottle.jpg')
+    no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Dark translucent container */
+.login-container {
+  max-width: 400px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);   /* darker for readability */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  color: #fff; /* default text white */
+}
+
+/* Title */
+.login-title {
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Form inputs */
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  outline: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.login-form input:focus {
+  border-color: #2ecc71;
+  box-shadow: 0 0 6px rgba(46, 204, 113, 0.8);
+}
+
+/* Error */
+.login-error {
+  color: #ff6b6b;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #27ae60;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.login-btn:hover {
+  background: #219150;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.login-foot {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #f1f1f1; /* lighter text */
+}
+
+.login-foot a {
+  color: #2ecc71;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.login-foot a:hover {
+  text-decoration: underline;
+}
+
+/* Admin link */
+.login-admin {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #f1f1f1; /* lighter */
+}
+
+.login-admin a {
+  color: #2ecc71;
+  text-decoration: none;
+}
+
+.login-admin a:hover {
+  text-decoration: underline;
+}

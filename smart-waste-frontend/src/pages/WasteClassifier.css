@@ -1,0 +1,198 @@
+/* Main layout: chatbot left, chat UI right */
+.chatbot-layout {
+  display: flex;
+  justify-content: center; /* keeps chat UI in middle */
+  align-items: center;
+  height: 100vh;
+  position: relative; /* for absolute positioning of bot */
+  padding: 0;
+
+  /* Background image only for this page */
+  background: url("./green.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Left side: chatbot GIF (absolute position) */
+.chatbot-side {
+  position: absolute;
+  bottom: 50px;   /* 50px from bottom */
+  left: 20px;     /* 20px from left */
+}
+
+.chatbot-img {
+  width: 180px;       /* smaller for clarity */
+  max-width: 100%;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast; 
+  image-rendering: crisp-edges;
+
+  /* Soft glow effect */
+  filter: drop-shadow(0 0 10px rgba(0, 200, 100, 0.5));
+}
+
+/* Right side: chat UI (centered) */
+.classifier-container {
+  margin: 0 auto; /* center horizontally */
+  max-width: 700px;
+  flex: none; /* prevent stretching */
+  padding: 20px;
+  background: linear-gradient(135deg, #e8f5e9, #f1fff4);
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 128, 0, 0.2);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+}
+
+/* Title */
+.classifier-container h2 {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #1e5631;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+/* Chat window */
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #cce3d1;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  scroll-behavior: smooth;
+
+  /* Hide scrollbar but allow scrolling */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.chat-window::-webkit-scrollbar {
+  display: none;
+}
+
+/* Chat message */
+.chat-message {
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: 18px;
+  line-height: 1.5;
+  font-size: 15px;
+  animation: fadeIn 0.3s ease-in-out;
+  white-space: pre-line;
+}
+
+/* Bot bubble */
+.chat-message.bot {
+  align-self: flex-start;
+  background: #e6f7ec;
+  border: 1px solid #b2dfb5;
+  color: #1e5631;
+  border-bottom-left-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 128, 0, 0.15);
+}
+
+/* User bubble */
+.chat-message.user {
+  align-self: flex-end;
+  background: #1e5631;
+  color: white;
+  border: 1px solid #1e5631;
+  border-bottom-right-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Error bubble */
+.chat-message.error {
+  align-self: center;
+  background: #ffe6e6;
+  border: 1px solid #ff9999;
+  color: #a60000;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-weight: 500;
+}
+
+/* Input area */
+.chat-input {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #cce3d1;
+  box-shadow: 0 2px 6px rgba(0, 128, 0, 0.15);
+}
+
+/* Upload button */
+.upload-btn {
+  padding: 10px 14px;
+  background: #2e7d32;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.2s;
+  white-space: nowrap;
+}
+.upload-btn:hover {
+  background: #1e5631;
+}
+
+/* File name */
+.file-name {
+  font-size: 14px;
+  color: #555;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Text input */
+.chat-input input[type="text"] {
+  flex: 3;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #cce3d1;
+  outline: none;
+  font-size: 15px;
+}
+.chat-input input[type="text"]:focus {
+  border-color: #1e5631;
+  box-shadow: 0 0 6px rgba(30, 86, 49, 0.3);
+}
+
+/* Send button */
+.chat-input button {
+  padding: 10px 20px;
+  background: #1e5631;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 500;
+}
+.chat-input button:hover {
+  background: #2d8659;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
